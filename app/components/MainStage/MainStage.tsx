@@ -214,8 +214,10 @@ const MainStage: FC<MainStageProps> = () => {
     return (
         <header className="bgimg-1 w3-display-container w3-grayscale-min" id="home">
             <h1>Meteor Landings in History</h1>
-            <div className="w3-display-center w3-text-white" style={{padding:"48px"}}>
-                <div id="chartdiv" style={{ width: "1000px", height: "1000px" }}></div>
+            <h4>Note Mobile experience is not supported currently</h4>
+
+            <div className="w3-display-center w3-text-white" style={{padding: "48px"}}>
+                <div id="chartdiv" style={{width: "1000px", height: "1000px"}}></div>
             </div>
         </header>
     );
