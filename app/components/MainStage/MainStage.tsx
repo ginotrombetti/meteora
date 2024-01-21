@@ -185,7 +185,10 @@ const MainStage: FC<MainStageProps> = () => {
                 for (var i = 0; i < data.length; i++) {
 
                     let city = data[i];
-                    addCity(city.geolocation?.longitude, city.geolocation?.latitude, `City: ${city.name} \nMass: ${city.mass} \nYear: ${city.year} \nReclass: ${city.recclass} \nNameType: ${city.nametype}`);
+                    let date = new Date(city.year);
+                    /* Date format you have */
+                    let dateMDY = `${date.getFullYear()}`;
+                    addCity(city.geolocation?.longitude, city.geolocation?.latitude, `City: ${city.name} \nMass: ${city.mass} \nYear: ${dateMDY} \nReclass: ${city.recclass} \nNameType: ${city.nametype}`);
                 }
 
                 // @ts-ignore
@@ -210,6 +213,7 @@ const MainStage: FC<MainStageProps> = () => {
 
     return (
         <header className="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+            <h1>Meteor Landings in History</h1>
             <div className="w3-display-center w3-text-white" style={{padding:"48px"}}>
                 <div id="chartdiv" style={{ width: "1000px", height: "1000px" }}></div>
             </div>
