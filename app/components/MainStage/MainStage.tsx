@@ -56,7 +56,7 @@ const MainStage: FC<MainStageProps> = () => {
             return nasaData
         } catch (error) {
             // Handle errors
-            console.error('Error:', error.message || error);
+            console.error('Error:', error);
         }
     }
 
@@ -188,7 +188,8 @@ const MainStage: FC<MainStageProps> = () => {
                     addCity(city.geolocation?.longitude, city.geolocation?.latitude, `City: ${city.name} \nMass: ${city.mass} \nYear: ${city.year} \nReclass: ${city.recclass} \nNameType: ${city.nametype}`);
                 }
 
-                function addCity(longitude, latitude, title) {
+                // @ts-ignore
+                function addCity(longitude: string, latitude: string, title: string) {
                     pointSeries.data.push({
 
                         geometry: {type: "Point", coordinates: [longitude, latitude]},
